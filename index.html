@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stay SF - Find Your San Francisco Home</title>
+  
+  <!-- Google Fonts - Unique combination -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  
+  <!-- Simple Top Bar -->
+  <header class="topbar">
+    <a href="#" class="logo">Stay<span>SF</span></a>
+    <div class="topbar-right">
+      <span class="date-display"></span>
+      <button class="saved-btn" id="savedBtn">
+        Saved <span id="savedCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Hero - Editorial Style -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="tagline">50 handpicked stays in</p>
+      <h1>San<br>Francisco</h1>
+      <p class="hero-desc">From cozy studios in the Mission to Victorian gems in Haight-Ashbury. Your perfect SF adventure starts here.</p>
+    </div>
+    <div class="hero-right">
+      <div class="search-wrapper">
+        <input type="text" id="searchInput" placeholder="Search neighborhoods, amenities...">
+      </div>
+      <div class="quick-filters">
+        <button class="filter-chip active" data-filter="all">All Stays</button>
+        <button class="filter-chip" data-filter="superhost">Superhosts</button>
+        <button class="filter-chip" data-filter="budget">Under $150</button>
+        <button class="filter-chip" data-filter="luxury">$300+</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Strip -->
+  <div class="stats-strip">
+    <div class="stat-item">
+      <span class="stat-num" id="listingCount">50</span>
+      <span class="stat-text">places to stay</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num" id="avgPrice">$0</span>
+      <span class="stat-text">avg per night</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num" id="superhostNum">0</span>
+      <span class="stat-text">superhosts</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <span class="stat-num" id="hoodCount">0</span>
+      <span class="stat-text">neighborhoods</span>
+    </div>
+  </div>
+
+  <!-- Listings Section -->
+  <main class="listings-section">
+    <div class="section-header">
+      <h2>Available Now</h2>
+      <p class="results-info" id="resultsInfo">Loading listings...</p>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loader" class="loader">
+      <div class="loader-text">Finding the best stays...</div>
+    </div>
+
+    <!-- Listings Grid - Masonry Style -->
+    <div id="listingsGrid" class="listings-grid"></div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="empty-state" style="display: none;">
+      <p>No stays match your search.</p>
+      <button onclick="resetFilters()">Clear filters</button>
+    </div>
+  </main>
+
+  <!-- Saved Modal -->
+  <div id="savedModal" class="modal">
+    <div class="modal-box">
+      <div class="modal-top">
+        <h3>Your Saved Stays</h3>
+        <button class="close-modal" id="closeModal">&times;</button>
+      </div>
+      <div id="savedList" class="saved-list">
+        <p class="empty-saved">You haven't saved any stays yet.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detail Modal -->
+  <div id="detailModal" class="modal">
+    <div class="modal-box modal-large">
+      <button class="close-modal" id="closeDetail">&times;</button>
+      <div id="detailBody"></div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p>Built by <strong>Abhimanyu Tripathi</strong> for CS5610 Web Development</p>
+      <p class="footer-small">Data from San Francisco Airbnb listings • Northeastern University</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
