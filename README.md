@@ -36,7 +36,7 @@ Built for CS5610 Web Development at Northeastern University. The app fetches the
 
 ## Author
 
-**Abhimanyu Tripathi**  
+**Abhimanyu Dudeja**  
 MS Computer Science, Northeastern University
 
 ---
